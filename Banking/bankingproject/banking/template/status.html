@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block stylecontent %}
+    <style>
+        body {
+            background-color: aliceblue
+        }
+
+        .foot {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+        }
+    </style>
+{% endblock %}
+
+
+{% block bodycontent%}
+
+<div class="container">
+        <a href="{% url 'bankapp:form_view' %}"><button class="btn btn-primary" id="form"> Click here to next page</button></a>
+</div>
+{% endblock %}

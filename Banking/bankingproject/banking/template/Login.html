@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <style>
+      *{
+        font-family: 'Quicksand', sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar is-black" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="">
+
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a href="{% url 'bankapp:demo' %}" class="navbar-item">
+            Home
+          </a>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+
+              <a class="has-text-light mr-2">
+                Central Bank website
+              </a>
+              <div class="buttons">
+
+                <a href="" class="button is-success mr-2">
+                  <strong>Register</strong>
+                </a>
+                <a href="" class="button is-light">
+                  Log in
+                </a>
+              </div>
+
+          </div>
+        </div>
+      </div>
+      </nav>
+
+    <section class="hero is-light is-fullheight" style="background-color:aqua;">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+
+              <form method="POST" action="login" class="box">
+                {% csrf_token %}
+
+                <h1 class="has-text-centered mb-5 is-size-3">Login</h1>
+
+                <div class="field">
+                  <label  class="label">Username</label>
+                  <div class="control has-icons-left">
+                    {{ form.username }}
+                    <span class="icon is-small is-left">
+                      <i class="fa fa-user"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label  class="label">Password</label>
+                  <div class="control has-icons-left">
+                    {{ form.password }}
+                    <span class="icon is-small is-left">
+                      <i class="fa fa-envelope"></i>
+                    </span>
+                  </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+            <button type="submit" class="btn btn-success">
+                <i class="fa fa-sign-in"></i>
+                Login
+            </button>
+
+            <br> <br>
+
+            <small class="row">
+
+                <a href="{% url 'credentials:register' %}" class="col text-right">Register</a>
+            </small>
+              </form>
+    </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  <div class="copyright_section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<p class="copyright_text">Copyright 2020 All Right Reserved By Bank Management System</a></p>
+				</div>
+            </div>
+        </div>
+  </div>
+</body>
+</html>
+
+
